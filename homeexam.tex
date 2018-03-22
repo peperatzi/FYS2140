@@ -139,7 +139,19 @@ where $h$ is Plancks constant.
 
 \subsubsection*{b2.}
 
+\textit{Bragg diffraction} is gi en by
 
+\begin{equation}
+n\lambda = 2d\sin{\theta},
+\end{equation}
+
+where $n$ is a positive integer and $\lambda$ is the \textit{wavelength of the incident wave}.
+
+Maximum intensity is given at $n=1$, and thus
+
+\begin{equation}
+\theta_{max} = \sin^{-1}{\frac{\lambda}{2d}}
+\end{equation}
 
 \section*{Problem 2}
 
@@ -255,15 +267,80 @@ Because the barriere is not located at $x=0$, we need to offset it by $-x_1$ whi
 which will give
 
 \begin{align}
-1 + r &= C + D, \\
-Ce^{q\Delta x} + De^{-q\Delta x} &= t,\\
-ik(1-r) &= q(C - D) \ \text{and} \\
-q(Ce^{q\Delta x} - De^{-q\Delta x}) &= ikte^{ik\Delta x}, \\
+1 + r &= C + D, \label{eq_1} \\
+Ce^{q\Delta x} + De^{-q\Delta x} &= t, \label{eq_2} \\
+ik(1-r) &= q(C - D) \ \text{and} \label{eq_3} \\
+q(Ce^{q\Delta x} - De^{-q\Delta x}) &= ikte^{ik\Delta x}, \label{eq_4} \\
 \end{align}
 
 where I have set $A = 1$, the \textit{incomming wave}, $B = r$, the \textit{reflected wave} and  $F = t$, the \textit{transmitted wave}.
 
-Now we are left with four equation. We need to solve for $t$. This is straigt forward algebra and left as an exercice to the reader as it is trivial (I'm just kidding! The derivations is listed at the end of this document!).
+Now we are left with four equations. We need to solve for $t$. This is straight forward and left as an exercice to the reader as it is trivial (I'm just kidding! Here it is!).
+
+We start with (\ref{eq_2}), solving for $C$
+
+\begin{equation}
+C = \frac{te^{ik\Delta x}-De^{-q\Delta x}}{e^{q\Delta x}} \label{eq_5}
+\end{equation}
+
+Inserting (\ref{eq_5}) into (\ref{eq_4}) yields
+
+\begin{equation}
+q(te^{ik\Delta x} - 2De^{-q\Delta x}) = ikte^{ik\Delta x}.
+\end{equation}
+
+Solving for $t$ yields
+
+\begin{equation}
+    t = \frac{2qDe^{-z\Delta x}}{z^*}, \label{eq_6}
+\end{equation}
+
+where we have introduced the variables $z \equiv q + ik$ and $q^* \equiv q - ik$.
+
+Next, eliminate $r$ from (\ref{eq_1}) and (\ref{eq_3}) to get
+
+\begin{equation}
+ik(1 - r) = q(C - D),
+\end{equation}
+
+which after some manipulations yields
+
+\begin{equation}
+C = \frac{Dz^* + 2ik}{z} \label{eq_7}.
+\end{equation}
+
+Setting (\ref{eq_5}) = (\ref{eq_7}) yields
+
+\begin{equation}
+te^{-z^*\Delta x} - De^{-2q\Delta x} = \frac{Dz^* + 2ik}{z},
+\end{equation}
+
+wich gives, by solving for $D$
+
+\begin{equation}
+D = \frac{tze^{-z^*\Delta x} - 2ik}{z^* + ze^{-2q\Delta x}} \label{eq_8}.
+\end{equation}
+
+Put (\ref{eq_8}) into (\ref{eq_6})
+
+\begin{equation}
+tz^* = \frac{tze^{-z^*\Delta x} - 2ik}{z^* + ze^{-2q\Delta x}}e^{-z\Delta x}
+\end{equation}
+
+which, if we solve for $t$ yields
+
+\begin{align}
+t &= \frac{2ike^{-z\Delta x}}{ze^{-(z^* + z)\Delta x} - \frac{z^*}{2q}(z^*+ze^{-2q\Delta x})} \\
+  &= \frac{1}{\frac{ze^{-z^*\Delta x}}{2ik} - \frac{z^*e^{-z\Delta x}}{4ikq}(z^* + ze^{-2q\Delta x})}
+\end{align}
+
+$T = |t|^2$ and thus
+
+\begin{equation}
+T = \bigg( \frac{1}{\frac{ze^{-z^*\Delta x}}{2ik} - \frac{z^*e^{-z\Delta x}}{4ikq}(z^* + ze^{-2q\Delta x})} \bigg)^2
+\end{equation}
+
+I have skipped many steps, however, my calculations by hand is attached at the end of the document.
 
 \subsubsection*{d.}
 

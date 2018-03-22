@@ -21,7 +21,7 @@ def Psi0(x):
 
 def V(x):
     potential = zeros(len(x))
-    potential[x<=0] = 35
+    potential[x>=0] = 34        # [MeV]
     return potential
 
 nx = 801    # Number of points in x direction
@@ -48,7 +48,6 @@ draw()
 
 c1 = (1j*hbarc*c) / (2.*E0p)
 c2 = -(1j*c) / hbarc
-
 
 t = 0
 c = 1

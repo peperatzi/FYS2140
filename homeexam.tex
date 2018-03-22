@@ -70,7 +70,7 @@
 
 Comptons scattering forumla can be written on the form
 \begin{equation}
-\Delta \lambda = \lambda_{s} - \lambda_{i} = \lambda_C(1 - \cos{\theta}),
+\Delta \lambda = \lambda_{s} - \lambda_{i} = \lambda_C(1 - \cos{\Theta}), \label{eq_compton}
 \end{equation}
 
 where $\lambda_{i}$ is the incident photon, $\lambda_{s}$ is the scattered photon, $\cos{\Theta}$ is the angle between the horizontal and the scattered photon, $\lambda_C = h/(m_ec) = 2.43\times 10^{-3}nm$ is the \textit{Compton wavelength for the electron} where $h$ is Plancks constant, $m_c$ is the electron mass and $c$ is the speed of light. Figure 1 shows a schematic of the setup.
@@ -129,7 +129,7 @@ where $m_n$ is the neutron mass
 \rightarrow \braket{p} = \sqrt{1*6.17\times 10^{-21}J\times 1.67\times 10^{-27}kg} \approx 4.54\times 10^{-24}.
 \end{equation}
 
-Finally we can find the wavelenth by using the \textit{deBroglie relation} 
+Finally we can find the wavelength by using the \textit{deBroglie relation} 
 
 \begin{equation}
 \lambda = \frac{h}{p} \rightarrow \lambda = \frac{6.32\times 10^{-34}J}{4.54\times 10^{-24}} \approx 1.30\times 10^{-10}m \approx 0.1nm
@@ -139,10 +139,10 @@ where $h$ is Plancks constant.
 
 \subsubsection*{b2.}
 
-\textit{Bragg diffraction} is gi en by
+\textit{Bragg diffraction} is given by
 
 \begin{equation}
-n\lambda = 2d\sin{\theta},
+n\lambda = 2d\sin{\Theta}, \label{eq_bragg_diff}
 \end{equation}
 
 where $n$ is a positive integer and $\lambda$ is the \textit{wavelength of the incident wave}.
@@ -150,7 +150,19 @@ where $n$ is a positive integer and $\lambda$ is the \textit{wavelength of the i
 Maximum intensity is given at $n=1$, and thus
 
 \begin{equation}
-\theta_{max} = \sin^{-1}{\frac{\lambda}{2d}}
+\Theta_{max} = \sin^{-1}{\frac{\lambda}{2d}}
+\end{equation}
+
+We want $|\Delta \lambda|/\lambda \leq 10\% = 1/10$.
+
+By using (\ref{eq_compton}) and (\ref{eq_bragg_diff}) we get write
+
+\begin{equation}
+\frac{|\Delta \lambda|}{\lambda} = \frac{\lambda_C(1 - \cos{\Theta})}{2d\sin{\Theta}} \leq \frac{1}{10}
+\end{equation}
+
+\begin{equation}
+\rightarrow \frac{h(1 - \cos{\Theta})}{mc2d\sin{\Theta}} \leq \frac{1}{10} \rightarrow \tan{\frac{\Theta}{2}} \leq \frac{mcd}{5h} \rightarrow \Theta = 2\tan^{-1}{\frac{mcd}{5h}}
 \end{equation}
 
 \section*{Problem 2}
@@ -344,9 +356,13 @@ I have skipped many steps, however, my calculations by hand is attached at the e
 
 \subsubsection*{d.}
 
+\lstinputlisting[language=Python]{problem2d.py}
+
 \subsubsection*{e.}
 
 \subsubsection*{f.}
+
+\lstinputlisting[language=Python]{timedependent.py}
 
 \subsubsection*{g.}
 

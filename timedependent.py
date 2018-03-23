@@ -3,17 +3,21 @@ from numpy import *
 from matplotlib.pyplot import *
 
 
-E0p = 938.27    # Rest enegy for the proton [MeV]
+E0p = 3727.3    # Rest enegy for the alpha partivle [MeV]
 hbarc = 0.1973  # MeV pm
 c = 3.0E2       # Speed of light [pm / as]
 
 
 def Psi0(x):
-    x0 = 0.100  # pm
+    '''
+    Initial state for a traveling gaussian wave packeet.
+    '''
+    x0 = -0.100  # pm
     a = 0.005   # pm
     l = 100.0e3 # 1 / pm
 
     A = (1./(2*pi*a**2))**0.25
+    
     K1 = exp(-(x-x0)**2 / (4.*a**2))
     K2 = exp(1j*l*x)
 
@@ -21,16 +25,20 @@ def Psi0(x):
 
 def V(x):
     potential = zeros(len(x))
-    potential[x>=0] = 34        # [MeV]
+    #potential[x>=0 && x<=1] = 34        # [MeV]
+    for i in x:
+        if i>=0 and i<=1:
+            pot
     return potential
 
-nx = 801    # Number of points in x direction
+nx = 1001    # Number of points in x direction
 np = 1e2    # Only plot every np-th calculation (for performance)
 dx = 0.001  # Distance between points
 
-a = -0.5*nx*dx
-b = 0.5*nx*dx
-x = linspace(a,b,nx)
+#x1 = -0.5*nx*dx
+x1 = -0.5*nx*dx
+x2 = 0.5*nx*dx
+x = linspace(x1,x2,nx)
 
 dPsidx2 = zeros(nx).astype(complex64)
 Psi = Psi0(x)

@@ -70,7 +70,7 @@
 
 Comptons scattering forumla can be written on the form
 \begin{equation}
-\Delta \lambda = \lambda_{s} - \lambda_{i} = \lambda_C(1 - \cos{\theta}),
+\Delta \lambda = \lambda_{s} - \lambda_{i} = \lambda_C(1 - \cos{\Theta}), \label{eq_compton}
 \end{equation}
 
 where $\lambda_{i}$ is the incident photon, $\lambda_{s}$ is the scattered photon, $\cos{\Theta}$ is the angle between the horizontal and the scattered photon, $\lambda_C = h/(m_ec) = 2.43\times 10^{-3}nm$ is the \textit{Compton wavelength for the electron} where $h$ is Plancks constant, $m_c$ is the electron mass and $c$ is the speed of light. Figure 1 shows a schematic of the setup.
@@ -129,7 +129,7 @@ where $m_n$ is the neutron mass
 \rightarrow \braket{p} = \sqrt{1*6.17\times 10^{-21}J\times 1.67\times 10^{-27}kg} \approx 4.54\times 10^{-24}.
 \end{equation}
 
-Finally we can find the wavelenth by using the \textit{deBroglie relation} 
+Finally we can find the wavelength by using the \textit{deBroglie relation} 
 
 \begin{equation}
 \lambda = \frac{h}{p} \rightarrow \lambda = \frac{6.32\times 10^{-34}J}{4.54\times 10^{-24}} \approx 1.30\times 10^{-10}m \approx 0.1nm
@@ -139,7 +139,31 @@ where $h$ is Plancks constant.
 
 \subsubsection*{b2.}
 
+\textit{Bragg diffraction} is given by
 
+\begin{equation}
+n\lambda = 2d\sin{\Theta}, \label{eq_bragg_diff}
+\end{equation}
+
+where $n$ is a positive integer and $\lambda$ is the \textit{wavelength of the incident wave}.
+
+Maximum intensity is given at $n=1$, and thus
+
+\begin{equation}
+\Theta_{max} = \sin^{-1}{\frac{\lambda}{2d}}
+\end{equation}
+
+We want $|\Delta \lambda|/\lambda \leq 10\% = 1/10$.
+
+By using (\ref{eq_compton}) and (\ref{eq_bragg_diff}) we get write
+
+\begin{equation}
+\frac{|\Delta \lambda|}{\lambda} = \frac{\lambda_C(1 - \cos{\Theta})}{2d\sin{\Theta}} \leq \frac{1}{10}
+\end{equation}
+
+\begin{equation}
+\rightarrow \frac{h(1 - \cos{\Theta})}{mc2d\sin{\Theta}} \leq \frac{1}{10} \rightarrow \tan{\frac{\Theta}{2}} \leq \frac{mcd}{5h} \rightarrow \Theta = 2\tan^{-1}{\frac{mcd}{5h}}
+\end{equation}
 
 \section*{Problem 2}
 
@@ -219,12 +243,19 @@ Fe^{ikx}  &, \ \ x \geq x_1 \\
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.6\textwidth]{potentialbarriere}
-\caption{Potential barriere.}
+\caption{Potential barriere as given in the problem.}
 \label{fig:figure_label}
 \end{figure}
 
 
 \subsubsection*{c.}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.6\textwidth]{potentialbarriereoffset}
+\caption{To find boundary conditions, we offset the potential barriere by $-x_1$. We also set $A=1$, the \textit{incomming wave}, $B=r$, the \textit{reflected wave} and $F=t$, the \textit{transmitted wave}.}
+\label{fig:figure_label}
+\end{figure}
 
 We need to look at the bounadary conditions for $\psi(x)$ and $d\psi/dx$. The derivatives of $\psi$ will have the following form
 
@@ -248,21 +279,90 @@ Because the barriere is not located at $x=0$, we need to offset it by $-x_1$ whi
 which will give
 
 \begin{align}
-1 + r &= C + D, \\
-Ce^{q\Delta x} + De^{-q\Delta x} &= t,\\
-ik(1-r) &= q(C - D), \\
-q(Ce^{q\Delta x} - De^{-q\Delta x}) &= ikte^{ik\Delta x}, \\
+1 + r &= C + D, \label{eq_1} \\
+Ce^{q\Delta x} + De^{-q\Delta x} &= t, \label{eq_2} \\
+ik(1-r) &= q(C - D) \ \text{and} \label{eq_3} \\
+q(Ce^{q\Delta x} - De^{-q\Delta x}) &= ikte^{ik\Delta x}, \label{eq_4} \\
 \end{align}
 
 where I have set $A = 1$, the \textit{incomming wave}, $B = r$, the \textit{reflected wave} and  $F = t$, the \textit{transmitted wave}.
 
-Now we are left with four equation. We need to solve for $t$. This is straigt forward algebra and left as an exercice to the reader as it is trivial (I'm just kidding! The derivations is listed at the end of this document!).
+Now we are left with four equations. We need to solve for $t$. This is straight forward and left as an exercice to the reader as it is trivial (I'm just kidding! Here it is!).
+
+We start with (\ref{eq_2}), solving for $C$
+
+\begin{equation}
+C = \frac{te^{ik\Delta x}-De^{-q\Delta x}}{e^{q\Delta x}} \label{eq_5}
+\end{equation}
+
+Inserting (\ref{eq_5}) into (\ref{eq_4}) yields
+
+\begin{equation}
+q(te^{ik\Delta x} - 2De^{-q\Delta x}) = ikte^{ik\Delta x}.
+\end{equation}
+
+Solving for $t$ yields
+
+\begin{equation}
+    t = \frac{2qDe^{-z\Delta x}}{z^*}, \label{eq_6}
+\end{equation}
+
+where we have introduced the variables $z \equiv q + ik$ and $q^* \equiv q - ik$.
+
+Next, eliminate $r$ from (\ref{eq_1}) and (\ref{eq_3}) to get
+
+\begin{equation}
+ik(1 - r) = q(C - D),
+\end{equation}
+
+which after some manipulations yields
+
+\begin{equation}
+C = \frac{Dz^* + 2ik}{z} \label{eq_7}.
+\end{equation}
+
+Setting (\ref{eq_5}) = (\ref{eq_7}) yields
+
+\begin{equation}
+te^{-z^*\Delta x} - De^{-2q\Delta x} = \frac{Dz^* + 2ik}{z},
+\end{equation}
+
+wich gives, by solving for $D$
+
+\begin{equation}
+D = \frac{tze^{-z^*\Delta x} - 2ik}{z^* + ze^{-2q\Delta x}} \label{eq_8}.
+\end{equation}
+
+Put (\ref{eq_8}) into (\ref{eq_6})
+
+\begin{equation}
+tz^* = \frac{tze^{-z^*\Delta x} - 2ik}{z^* + ze^{-2q\Delta x}}e^{-z\Delta x}
+\end{equation}
+
+which, if we solve for $t$ yields
+
+\begin{align}
+t &= \frac{2ike^{-z\Delta x}}{ze^{-(z^* + z)\Delta x} - \frac{z^*}{2q}(z^*+ze^{-2q\Delta x})} \\
+  &= \frac{1}{\frac{ze^{-z^*\Delta x}}{2ik} - \frac{z^*e^{-z\Delta x}}{4ikq}(z^* + ze^{-2q\Delta x})}
+\end{align}
+
+$T = |t|^2$ and thus
+
+\begin{equation}
+T = \bigg( \frac{1}{\frac{ze^{-z^*\Delta x}}{2ik} - \frac{z^*e^{-z\Delta x}}{4ikq}(z^* + ze^{-2q\Delta x})} \bigg)^2
+\end{equation}
+
+I have skipped many steps, however, my calculations by hand is attached at the end of the document.
 
 \subsubsection*{d.}
+
+\lstinputlisting[language=Python]{problem2d.py}
 
 \subsubsection*{e.}
 
 \subsubsection*{f.}
+
+\lstinputlisting[language=Python]{timedependent.py}
 
 \subsubsection*{g.}
 

@@ -68,12 +68,12 @@
 \subsubsection*{a1.}
 
 
-Comptons scattering forumla can be written on the form
+Comptons scattering formula can be written on the form
 \begin{equation}
 \Delta \lambda = \lambda_{s} - \lambda_{i} = \lambda_C(1 - \cos{\Theta}), \label{eq_compton}
 \end{equation}
 
-where $\lambda_{i}$ is the incident photon, $\lambda_{s}$ is the scattered photon, $\cos{\Theta}$ is the angle between the horizontal and the scattered photon, $\lambda_C = h/(m_ec) = 2.43\times 10^{-3}nm$ is the \textit{Compton wavelength for the electron} where $h$ is Plancks constant, $m_c$ is the electron mass and $c$ is the speed of light. Figure 1 shows a schematic of the setup.
+where $\lambda_{i}$ is the incident photon, $\lambda_{s}$ is the scattered photon, $\cos{\Theta}$ is the angle between the horizontal and the scattered photon, $\lambda_C = h/(m_ec) = 2.43\times 10^{-3}nm$ is the \textit{Compton wavelength for the electron} where $h$ is Planck's constant, $m_c$ is the electron mass and $c$ is the speed of light. \hyperlink{figure_1}{Figure 1} shows a schematic of the setup.
 
 \begin{figure}[t]
 \centering
@@ -81,6 +81,7 @@ where $\lambda_{i}$ is the incident photon, $\lambda_{s}$ is the scattered photo
 \caption{Compton scattering.}
 \label{fig:figure_label}
 \end{figure}
+\hypertarget{figure_1}{}
 
 \subsubsection*{a2.}
 
@@ -90,16 +91,21 @@ Using Comptons formula, we can find the angle by
 \Theta = \cos^{-1}{\big( 1 - \frac{\Delta \lambda}{\lambda_C} \big)} = \cos^{-1}{\big(1 - \frac{0.0749 \ nm - 0.0709 \ nm}{0.00243 \ nm} \big)} \approx 130^{\circ},
 \end{equation}
 
-which seems like a reasonable result concidering the graphs given in the problem.
+which shows the measuremets was performed at $135^{\circ}$, taking uncertainties into consideration.
 
 \subsubsection*{a3.}
 
+The top to the left can be explained in the following way. A change in wavelength is due to electric interactions between the photon and the weakest bounded electrons, in which we idealize the process as it was a collision between a photon and an electron. If, on the other hand the electron is heavily bounded to the atom or the incomming electromagnetic wave is not strong enough to release the electron, we can look at the process as a photon colliding with an atom, in which the atom will experience a recoil effect. If we concider the material carbon, our reaction is explained by
+
 \begin{equation}
-\frac{\lambda_C}{\lambda_i}
+\gamma + C \rightarrow \gamma + C, 
 \end{equation}
 
-Visible light yields wavelengths in the range $380 \ nm - 750 \ nm$. X-rays have shorter wavelengths and thus 
- 
+where we replace the mass of the electron by the mass of a carbaon atom, which is 22000 times heavier. This will give $\lambda_C \approx 0.1 \ fm$, which within the wavelength of x-rays gives differences hardly noticable.
+
+\bigskip
+
+Visible light yields wavelengths in the range $380 \ nm - 750 \ nm$. If we look at yellow light ($\approx 589 \ nm$), we have that $\lambda_C/\lambda_{yellow} \approx 10^{-6}$. Because $\lambda_C$ describe the largest possible $\Delta\lambda$, we would hardly notice any difference in wavelenght.
 
 \subsection*{Wave nature of the neutron}
 
@@ -111,7 +117,7 @@ Average energy is given by
 \braket{E} = \frac{3}{2}k_BT,
 \end{equation}
 
-where $T$ is the temperatur in Kelvin and $k_B$ is Boltzmanns constant. $25^\circ = 298K$ and thus
+where $T$ is the temperature in Kelvin and $k_B$ is Boltzmann's constant. $25^\circ = 298K$ and thus
 
 \begin{equation}
 \rightarrow \braket{E} = 1.5\times(1.38\times 10^{-23}m^2kgs^{-2}K^{-1})(298.15K) \approx 6.17\times 10^{-21}J.
@@ -135,7 +141,7 @@ Finally we can find the wavelength by using the \textit{deBroglie relation}
 \lambda = \frac{h}{p} \rightarrow \lambda = \frac{6.32\times 10^{-34}J}{4.54\times 10^{-24}} \approx 1.30\times 10^{-10}m \approx 0.1nm
 \end{equation},
 
-where $h$ is Plancks constant.
+where $h$ is Planck's constant.
 
 \subsubsection*{b2.}
 
@@ -145,17 +151,12 @@ where $h$ is Plancks constant.
 n\lambda = 2d\sin{\Theta}, \label{eq_bragg_diff}
 \end{equation}
 
-where $n$ is a positive integer and $\lambda$ is the \textit{wavelength of the incident wave}.
-
-Maximum intensity is given at $n=1$, and thus
+where $n$ is a positive integer and $\lambda$ is the \textit{wavelength of the incident wave}. Maximum intensity is given at $n=1$, and thus
 
 \begin{equation}
-\Theta_{max} = \sin^{-1}{\frac{\lambda}{2d}}
+\Theta_{max} = \sin^{-1}{\frac{\lambda}{2d}}.
 \end{equation}
-
-We want $|\Delta \lambda|/\lambda \leq 10\% = 1/10$.
-
-By using (\ref{eq_compton}) and (\ref{eq_bragg_diff}) we get write
+What we want is $|\Delta \lambda|/\lambda \leq 1/10$. By using (\ref{eq_compton}) and (\ref{eq_bragg_diff}) we get write
 
 \begin{equation}
 \frac{|\Delta \lambda|}{\lambda} = \frac{\lambda_C(1 - \cos{\Theta})}{2d\sin{\Theta}} \leq \frac{1}{10}
@@ -171,7 +172,7 @@ By using (\ref{eq_compton}) and (\ref{eq_bragg_diff}) we get write
 
 \subsubsection*{a.}
 
-We find $A$ by \textit{normalizing the wavefunction}. $|\Psi(x, 0)| = \Psi^*\Psi$, where $\Psi^*$ is the complex conjugate and thus, the imaginary part will vannish and the integral becomes
+We find $A$ by \textit{normalizing the wavefunction}. $|\Psi(x, 0)| = \Psi^*\Psi$, where $\Psi^*$ is the complex conjugate and thus, the imaginary part will vanish and the integral becomes
 
 \begin{equation}
 |\Psi(x, 0)|^2 = |A|^2\int_{-\infty}^{+\infty}e^{-(x-x_0)/2a^2} = 1.
@@ -186,10 +187,20 @@ Substituting $u = x-x_0 \rightarrow du = dx$ and $\lambda = 1/(2\pi a^2)$ yields
 which gives 
 
 \begin{equation}
-\Psi(x, 0) = \bigg(\frac{1}{\sqrt{2\pi a^2}}\bigg)^{1/4}e^{-(x-x_0)/4a^2}e^{ikx}
+\Psi(x, 0) = \bigg(\frac{1}{\sqrt{2\pi a^2}}\bigg)^{1/4}e^{-(x-x_0)/4a^2}e^{ikx}.
 \end{equation}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{normalizedgaussian}
+\caption{Plot $|\Psi(x,0)|^2$.}
+\label{fig:figure_problem2a}
+\end{figure}
 
+Energy for the stationary Schrödinger equation is defined by
+\begin{equation}
+E = \frac{\hbar^2k^2}{2m_{\alpha}} \rightarrow \frac{(6.5821\times 10^{-15}eVs\times 1.38\times 10^{-15} \ m^{-1})}{2\times 3.27\times eVc^{-2}}
+\end{equation}
 
 \subsubsection*{b.}
 
@@ -221,9 +232,9 @@ which general solution is
 \psi(x) = Ce^{iqx} + De^{-iqx} = Ce^{-\kappa x} + De^{\kappa x} \rightarrow Ce^{\kappa x} + De^{-\kappa x}.
 \end{equation}
 
-(I switched the constants C and D to make the equation consistant with my scetch.)
+(I switched the constants C and D to make the equation consistent with my sketch.)
 
-For ($x \geq x_2$), the general solution is simular to the left region, however, the latter term in the sum prepresents a wave comming in from the right and thus is omited from the equation
+For ($x \geq x_2$), the general solution is similar to the left region, however, the latter term in the sum represent a wave coming in from the right and thus is omitted from the equation
 
 \begin{equation}
 \psi(x) = Fe^{ikx}.
@@ -243,7 +254,7 @@ Fe^{ikx}  &, \ \ x \geq x_1 \\
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.6\textwidth]{potentialbarriere}
-\caption{Potential barriere as given in the problem.}
+\caption{Potential barrier as given in the problem.}
 \label{fig:figure_label}
 \end{figure}
 
@@ -253,11 +264,11 @@ Fe^{ikx}  &, \ \ x \geq x_1 \\
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.6\textwidth]{potentialbarriereoffset}
-\caption{To find boundary conditions, we offset the potential barriere by $-x_1$. We also set $A=1$, the \textit{incomming wave}, $B=r$, the \textit{reflected wave} and $F=t$, the \textit{transmitted wave}.}
+\caption{To find boundary conditions, we offset the potential barrier by $-x_1$. We also set $A=1$, the \textit{incoming wave}, $B=r$, the \textit{reflected wave} and $F=t$, the \textit{transmitted wave}.}
 \label{fig:figure_label}
 \end{figure}
 
-We need to look at the bounadary conditions for $\psi(x)$ and $d\psi/dx$. The derivatives of $\psi$ will have the following form
+We need to look at the boundary conditions for $\psi(x)$ and $d\psi/dx$. The derivatives of $\psi$ will have the following form
 
 \begin{equation}
 \frac{d\psi(x)}{dx} = \begin{cases}
@@ -267,7 +278,7 @@ ikFe^{ikx}  &, \ \ x \geq x_1 \\
 \end{cases}
 \end{equation}
 
-Because the barriere is not located at $x=0$, we need to offset it by $-x_1$ which will give the following boundary conditions
+Because the barrier is not located at $x=0$, we need to offset it by $-x_1$ which will give the following boundary conditions
 
 \begin{align}
 \psi_1(0) &= \psi_2(0), \\
@@ -285,9 +296,9 @@ ik(1-r) &= q(C - D) \ \text{and} \label{eq_3} \\
 q(Ce^{q\Delta x} - De^{-q\Delta x}) &= ikte^{ik\Delta x}, \label{eq_4} \\
 \end{align}
 
-where I have set $A = 1$, the \textit{incomming wave}, $B = r$, the \textit{reflected wave} and  $F = t$, the \textit{transmitted wave}.
+where I have set $A = 1$, the \textit{incoming wave}, $B = r$, the \textit{reflected wave} and  $F = t$, the \textit{transmitted wave}.
 
-Now we are left with four equations. We need to solve for $t$. This is straight forward and left as an exercice to the reader as it is trivial (I'm just kidding! Here it is!).
+Now we are left with four equations. We need to solve for $t$. This is straight forward and left as an exercise to the reader as it is trivial (I'm just kidding! Here it is!).
 
 We start with (\ref{eq_2}), solving for $C$
 
@@ -327,7 +338,7 @@ Setting (\ref{eq_5}) = (\ref{eq_7}) yields
 te^{-z^*\Delta x} - De^{-2q\Delta x} = \frac{Dz^* + 2ik}{z},
 \end{equation}
 
-wich gives, by solving for $D$
+which gives, by solving for $D$
 
 \begin{equation}
 D = \frac{tze^{-z^*\Delta x} - 2ik}{z^* + ze^{-2q\Delta x}} \label{eq_8}.
@@ -352,7 +363,7 @@ $T = |t|^2$ and thus
 T = \bigg( \frac{1}{\frac{ze^{-z^*\Delta x}}{2ik} - \frac{z^*e^{-z\Delta x}}{4ikq}(z^* + ze^{-2q\Delta x})} \bigg)^2
 \end{equation}
 
-I have skipped many steps, however, my calculations by hand is attached at the end of the document.
+I am sad to say this was all I got time to do so far, but I am pretty sure I am on the right track :)
 
 \subsubsection*{d.}
 
@@ -360,12 +371,16 @@ I have skipped many steps, however, my calculations by hand is attached at the e
 
 \subsubsection*{e.}
 
+Using (eq. 3) in the problem set we get $T(E_{\alpha = 4.8\times 10^9 eV}) \approx $
+
+
 \subsubsection*{f.}
 
 \lstinputlisting[language=Python]{timedependent.py}
 
 \subsubsection*{g.}
 
+\textit{Potential 2} is more realistic mainly because of two things; 1) It takes the particles distance from the atom into consideraton and 2) it used real charges. It looks like the high-energy particles will have a higher transmission coefficient in the real-world example than for the square barrier.
 
 \end{document}
 
